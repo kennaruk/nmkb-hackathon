@@ -1,0 +1,52 @@
+/*non checkbox related type styles*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.row {
+  margin-bottom: 10px;
+}
+
+.row > * {
+  display: inline-block;
+}
+
+.row > * {
+  padding-right: 40px;
+}
+
+.form {
+  margin: 40px;
+  font: 18px/1.6 "Open Sans", sans-serif;
+}
+
+.form-legend {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.form-item-label_checkbox {
+  text-transform: uppercase;
+}
+
+
+/* hide checkbox */
+.form-item-checkbox { 
+  display: none;
+}
+
+/* create checkbox style with pseudo element
+   gray outline checkbox*/
+.form-item-label_checkbox:before {
+    content: "";
+    display: inline-block;
+    border: 2px solid #d4dbde;
+    padding: 8px;
+    margin-right: 15px;
+    background: #ffffff;
+}
+
+/* checked checkbox - black outline and background image for check */
+.form-item-checkbox:checked + .form-item-label_checkbox:before {
+  border: 2px solid #000000;
+  background: url(https://i.imgur.com/sIC2cFV.png);
+}
