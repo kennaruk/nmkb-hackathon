@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/test', function(req, res, next) {
+router.get('/', function(req, res, next) {
 
-  res.render('index', { title: 'Express' });
+  res.render('test.ejs');
 });
 
 module.exports = router;
@@ -34,7 +34,7 @@ function loadLogin() {
   return fs.readFileSync('dist/login.html').toString();
 }
 
-router.get('/', function(request, response){
+router.get('/dist/login.html', function(request, response){
   var view = {
     appId: app_id,
     csrf: csrf_guid,
