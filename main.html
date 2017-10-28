@@ -6,26 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
-  <link rel="stylesheet" href="assets/css/dashboard.css" />
-  <link rel="stylesheet" href="assets/css/checkbox.css"
+  <link rel="stylesheet" href="assets/css/dashboard.css" /> <!-- public/assets -->
+  <link rel="stylesheet" href="assets/css/checkbox.css"/>
+  <link rel="stylesheet" href="assets/css/table.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <style type="text/css">
-    #div1 {
-        float:left;
-        width:100px;
-        height:100px;
-        border:solid 2px red;
-        text-align:center;
-    }
-    #div2 {
-        float:left;
-        width:100px;
-        height:100px;
-        border:solid 2px green;
-        text-align:center;
-    }
-    </style>
-<body style="background-image: url(&quot;/Users/peerasorn/Downloads/grader/images/bg.jpg&quot;);">
+  
+<body style="background-image: url(&quot;images/bg.jpg&quot;);">
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#"><h2>Grader</h2></a>
@@ -33,7 +21,8 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <button class="btn btn-primary" type="submit"><a href="#contact">Upload Files</a></button>
+            <button class="btn btn-dark" type="submit"><a href="#create">Create Tasks</a></button>&nbsp;&nbsp;
+            <button class="btn btn-primary" type="submit"><a href="#upload">Upload Files</a></button>
         </ul>
         <form class="form-inline m-0">
           <button class="btn btn-dark" type="submit">Logout</button>
@@ -41,41 +30,69 @@
       </div>
     </div>
   </nav>
+
+  
+  
   <div id="main">
-    <!-- Upload -->
-        <article id="contact">
+    <!-- Create -->
+    <article id="upload">
+            <form method="post" action="#">
             <h2 class="major">Upload Files</h2>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <input id="inputFile" type=file class="facebook" accept="">
+            
+            <ul class="actions">
+                    <li><input type="submit" value="Sumbit" class="special" /></li>
+                </ul>
+            </form>
+        </article>
+    <!-- Upload -->
+        <article id="create">
+            <h2 class="major">Create Tasks</h2>
             
             <form method="post" action="#">
+                    <!--
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                     <input id="inputFile" type=file class="facebook" accept="">
+                    -->
+                    <h4>Title</h4>
+                    <input style="width:500px" type="text" id="title" name="title">
                     
                     <form action="#" class="form">
+                            
                             <fieldset class="form-fieldset"><br>
-                                    
-                                    <div class="row">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <span class="form-item" role="listitem" tabindex="1">
-                                                <label for="name">Input</label>
-                                                <textarea name="input" id="input" rows="4" cols="25"></textarea>
-                                            </span>
-                                            <span class="form-item" role="listitem" tabindex="1">
-                                                <label for="email">Output</label>
-                                                <textarea name="output" id="output" rows="4" cols="25"></textarea>
-                                            </span>
-                                    </div><br>
+                                <h4>Language</h4>
                                 <div class="row">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <span class="form-item" role="listitem" tabindex="2">
-                                        <input  type="checkbox" name="checkbox" id="check1"/>
-                                        <label for="check1">C</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </span>
-                                    <span class="form-item" role="listitem" tabindex="3">
-                                        <input type="checkbox" name="checkbox" id="check2" />
-                                        <label for="check2">Java</label>
+                                        <input  type="checkbox" name="chkC" id="chkC"/>
+                                        <label for="chkC">C</label>
+                                        <input type="checkbox" name="chkCCC" id="chkCCC" />
+                                        <label for="chkCCC">C++</label>
+                                        <input type="checkbox" name="chkJava" id="chkJava" />
+                                        <label for="chkJava">Java</label>
+                                        <input type="checkbox" name="chkPy" id="chkPy" />
+                                        <label for="chkPy">Python</label>
                                     </span>
                                 </div>
-                                <div class="row">
+                                    <div class="row">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span class="form-item" role="listitem" tabindex="1">
+                                                <h4>Input</h4>
+                                                <textarea name="input" id="input" rows="4" cols="25"></textarea>
+                                            </span>
+                                            
+                                            <span class="form-item" role="listitem" tabindex="1">
+                                                <h4>Output</h4>
+                                                <textarea name="output" id="output" rows="4" cols="25"></textarea>
+                                                
+                                            </span>
+                                            
+                                    </div>
+                                    
+                                     <!-- add input/output -->
+                                    <a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i> more input/output</a>
+                                <!-- <div class="row">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <span class="form-item" role="listitem" tabindex="4">
                                         <input type="checkbox" name="checkbox" id="check3" />
@@ -85,7 +102,7 @@
                                         <input type="checkbox" name="checkbox" id="check4" />
                                         <label for="check4">Python</label>
                                     </span>
-                                </div>
+                                </div> -->
                             </fieldset>
                         </form>
 
@@ -107,8 +124,91 @@
                     </ul>
                 </form>
         </article>
+        
 </div>
+<button style="width:50%;height:70px" class="tablink" onclick="openCity('Task', this, '#606B74')" id="defaultOpen">My Tasks</button>
+<button style="width:50%;height:70px" class="tablink" onclick="openCity('Up', this, '#C7C7C7')">My Uploads</button>
+<div id="Task" class="tabcontent">
+        <br><br><br>
+        <div>
+            <table >
+                <tr>
+                    <td align="left">taks name</td>
+                    <td></td>
+                    <td align="right"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td align="left">taks name</td>
+                    <td></td>
+                    <td align="right"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td align="left">taks name</td>
+                    <td></td>
+                    <td align="right"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td align="left">taks name</td>
+                    <td></td>
+                    <td align="right"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true"></i></td>
+                </tr>
+                
+            </table>
+        </div>
+        
+</div>
+      
+<div id="Up" class="tabcontent">
+    <br><br><br>
+    <div>
+            <table >
+              <tr>
+                    <td align="left">file name</td>
+                    <td></td>
+                    <td align="right">where task?</td>
+              </tr>
+              <tr>
+                    <td align="left">file name</td>
+                    <td></td>
+                    <td align="right">where task?</td>
+              </tr>
+              <tr>
+                    <td align="left">file name</td>
+                    <td></td>
+                    <td align="right">where task?</td>
+              </tr>
+            </table>
+    </div>
+</div>
+      
+      
+      
 
+<script>
+   function openCity(cityName, elmnt, color) {
+    // Hide all elements with class="tabcontent" by default */
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove the background color of all tablinks/buttons
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+
+    // Show the specific tab content
+    document.getElementById(cityName).style.display = "block";
+
+    // Add the specific color to the button used to open the tab content
+    elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/skel.min.js"></script>
   <script src="assets/js/util.js"></script>
