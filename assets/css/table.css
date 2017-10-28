@@ -9,7 +9,7 @@
     padding: 14px 16px;
     font-size: 17px;
 	width: 25%;
-	
+	font-family: "Source Sans Pro", sans-serif;
 }
 
 /* Change background color of buttons on hover */
@@ -19,6 +19,7 @@
 
 /* Set default styles for tab content */
 .tabcontent {
+    font-family: "Source Sans Pro", sans-serif;
     color: white;
     display: none;
     padding: 50px;
