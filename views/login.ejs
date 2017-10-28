@@ -4,7 +4,9 @@
 <head>
 	<title>Login</title>
 	<!-- HTTPS required. HTTP will give a 403 forbidden response -->
-	<script src="https://sdk.accountkit.com/en_US/sdk.js"></script> 
+  <script src="https://sdk.accountkit.com/en_US/sdk.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
+  
 
 
 <script>
@@ -25,6 +27,7 @@
     if (response.status === "PARTIALLY_AUTHENTICATED") {
       var code = response.code;
       var csrf = response.state;
+      window.location.href="/main";
       // Send code to server to exchange for access token
     }
     else if (response.status === "NOT_AUTHENTICATED") {

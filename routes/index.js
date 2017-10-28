@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
-
+var db = require('../db.js');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  res.render('test.ejs');
+  res.render('index.ejs');
 });
+ router.get('/main', function(req, res, next) {
+  res.render('test.ejs')
+ });
 
 module.exports = router;
 
@@ -30,24 +33,23 @@ const me_endpoint_base_url = 'https://graph.accountkit.com/v1.1/me';
 const token_exchange_base_url = 'https://graph.accountkit.com/v1.1/access_token'; 
 
 
-function loadLogin() {
-  return fs.readFileSync('dist/login.html').toString();
-}
+// function loadLogin() {
+//   return fs.readFileSync('view/login.ejs').toString();
+// }
 
-router.get('/dist/login.html', function(request, response){
+router.get('/login', function(request, response){
   var view = {
     appId: app_id,
     csrf: csrf_guid,
     version: account_kit_api_version,
   };
 
-  var html = Mustache.to_html(loadLogin(), view);
-  response.send(html);
+  response.render('login.ejs')
 });
 
 
 function loadLoginSuccess() {
-  return fs.readFileSync('dist/login_success.html').toString();
+  return fs.readFileSync('login.ejs').toString();
 }
 
 router.post('/login_success', function(request, response){
