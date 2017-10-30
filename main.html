@@ -32,8 +32,8 @@
                 <!---->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <button class="btn btn-dark" type="submit"><a href="#create">Create Tasks</a></button>&nbsp;&nbsp;
-                        <button class="btn btn-primary" type="submit" style="width:200px"><a href="?#upload">Submit Task</a></button>
+                        <button class="btn btn-dark" id="cretasks" type="submit"><a href="#create">Create Tasks</a></button>&nbsp;&nbsp;
+                        <button class="btn btn-primary" id="submittask" type="submit" style="width:200px"><a href="?#upload">Submit Task</a></button>
                     </ul>
                     <form class="form-inline m-3">
                         <button class="btn btn-dark" type="submit">Logout</button>
@@ -146,7 +146,7 @@
     </div>
 
     <button style="width:50%;height:70px" class="tablink" onclick="openCity('Task', this, '#606B74')" id="defaultOpen">My Tasks</button>
-    <button style="width:50%;height:70px" class="tablink" onclick="openCity('Up', this, '#C7C7C7')">My Uploads</button>
+    <button style="width:50%;height:70px" class="tablink" onclick="openCity('Up', this, '#C7C7C7')" id="uploadbtn">My Uploads</button>
 
     <div id="Task" class="tabcontent">
             <br><br><br>
@@ -233,6 +233,21 @@
 
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
+            
+
+            $('#cretasks').click(()=>{
+                $('#Task').hide();
+                $('#Up').hide();
+                $('#defaultOpen').hide();
+                $('#uploadbtn').hide();
+            })
+            $('#submittask').click(()=>{
+                $('#Task').hide();
+                $('#Up').hide();
+                $('#defaultOpen').hide();
+                $('#uploadbtn').hide();
+            })
+
         </script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
